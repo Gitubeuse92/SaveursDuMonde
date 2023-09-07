@@ -6,7 +6,7 @@
 
 {% block body %}
 	<style>
-		
+
 
 		.avis {
 			background-image: url('/img/bg2.jpg');
@@ -30,7 +30,6 @@
 		textarea {
 			width: 40%;
 		}
-
 	</style>
 	{# Section Diaporama #}
 	<section>
@@ -71,15 +70,15 @@
 		<div class="trait"></div>
 
 		{# Boucle Entrées #}
-			<div class="d-flex flex-row flex-wrap justify-content-center">
-				{% for product in entrees %}
-					<div class="containeur_produit">
-						<div class="card-body d-flex flex-column align-items-center">
-							<h5 class="card-title">{{ product.title }}</h5>
-							<img src="{{ asset('img/products') }}/{{ product.image }}" class="card-img" alt="{{ product.title }}">
-							<p class="fs-6">Ingrédients:
-								{{ product.description }}</p>
-								<div class="d-flex flex-row gap-5">
+		<div class="d-flex flex-row flex-wrap justify-content-center">
+			{% for product in entrees %}
+				<div class="containeur_produit">
+					<div class="card-body d-flex flex-column align-items-center">
+						<h5 class="card-title">{{ product.title }}</h5>
+						<img src="{{ asset('img/products') }}/{{ product.image }}" class="card-img" alt="{{ product.title }}">
+						<p class="fs-6">Ingrédients:
+							{{ product.description }}</p>
+						<div class="d-flex flex-row gap-5">
 							<p>{{ product.price }}
 								€</p>
 							<a href="{{path('cart_add',{id:product.id}) }}">
@@ -87,26 +86,26 @@
 									<i class="fa-solid fa-cart-shopping position-relative"></i>
 								</button>
 							</a>
-							</div>
 						</div>
 					</div>
-				{% endfor %}
-			</div>
+				</div>
+			{% endfor %}
+		</div>
 
 
 		<h2 class="mt-5">Les Plats:</h2>
 		<div class="trait"></div>
 
 		{# Boucle Plats #}
-			<div class="d-flex flex-row flex-wrap justify-content-center">
-				{% for product in plats %}
-					<div class="containeur_produit">
-						<div class="card-body d-flex flex-column align-items-center">
-							<h5 class="card-title">{{ product.title }}</h5>
-							<img src="{{ asset('img/products') }}/{{ product.image }}" class="card-img" alt="{{ product.title }}">
-							<p class="fs-6">Ingrédients:
-								{{ product.description }}</p>
-								<div class="d-flex flex-row gap-5">
+		<div class="d-flex flex-row flex-wrap justify-content-center">
+			{% for product in plats %}
+				<div class="containeur_produit">
+					<div class="card-body d-flex flex-column align-items-center">
+						<h5 class="card-title">{{ product.title }}</h5>
+						<img src="{{ asset('img/products') }}/{{ product.image }}" class="card-img" alt="{{ product.title }}">
+						<p class="fs-6">Ingrédients:
+							{{ product.description }}</p>
+						<div class="d-flex flex-row gap-5">
 							<p>{{ product.price }}
 								€</p>
 							<a href="{{path('cart_add',{id:product.id}) }}">
@@ -114,26 +113,26 @@
 									<i class="fa-solid fa-cart-shopping position-relative"></i>
 								</button>
 							</a>
-							</div>
 						</div>
 					</div>
-				{% endfor %}
-			</div>
+				</div>
+			{% endfor %}
+		</div>
 
 
 		<h2 class="mt-5">Les Desserts:</h2>
 		<div class="trait"></div>
 
 		{# Boucle Desserts #}
-			<div class="d-flex flex-row flex-wrap justify-content-center">
-				{% for product in desserts %}
-					<div class="containeur_produit">
-						<div class="card-body d-flex flex-column align-items-center">
-							<h5 class="card-title">{{ product.title }}</h5>
-							<img src="{{ asset('img/products') }}/{{ product.image }}" class="card-img" alt="{{ product.title }}">
-							<p class="fs-6">Ingrédients:
-								{{ product.description }}</p>
-								<div class="d-flex flex-row gap-5">
+		<div class="d-flex flex-row flex-wrap justify-content-center">
+			{% for product in desserts %}
+				<div class="containeur_produit">
+					<div class="card-body d-flex flex-column align-items-center">
+						<h5 class="card-title">{{ product.title }}</h5>
+						<img src="{{ asset('img/products') }}/{{ product.image }}" class="card-img" alt="{{ product.title }}">
+						<p class="fs-6">Ingrédients:
+							{{ product.description }}</p>
+						<div class="d-flex flex-row gap-5">
 							<p>{{ product.price }}
 								€</p>
 							<a href="{{path('cart_add',{id:product.id}) }}">
@@ -141,125 +140,125 @@
 									<i class="fa-solid fa-cart-shopping position-relative"></i>
 								</button>
 							</a>
-							</div>
 						</div>
 					</div>
-				{% endfor %}
-			</div>
+				</div>
+			{% endfor %}
 		</div>
+	</div>
 
-	</section>
+</section>
 
 
-	{# Section Nos Experts #}
-	<section class="text-center my-5">
-		<h2>Nos
-			<span>E</span>xperts</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-		</p>
+{# Section Nos Experts #}
+<section class="text-center my-5">
+	<h2>Nos
+		<span>E</span>xperts</h2>
+	<p class="text-center">Découvrez notre équipe de talentueux chefs, passionnés de cuisine depuis des années, qui mettent leur expertise et leur créativité au service de vos papilles. Chacun de nos plats est le fruit de leur savoir-faire et de leur amour pour la gastronomie, garantissant une expérience culinaire inoubliable à chaque bouchée.
+	</p>
 
-		<div class="d-flex justify-content-center flex-wrap">
-			<figure>
-				<img src={{ asset('img/equipe1.jpg') }}>
-				<figcaption>Kacha</figcaption>
-			</figure>
-			<figure>
-				<img src={{ asset('img/equipe2.jpg') }}>
-				<figcaption>Paola Carosella</figcaption>
-			</figure>
-			<figure>
-				<img src={{ asset('img/equipe3.jpg') }}>
-				<figcaption>Shelina Permalloo</figcaption>
-			</figure>
-			<figure>
-				<img src={{ asset('img/equipe4.jpg') }}>
-				<figcaption>Samuel Lee Sum</figcaption>
-			</div>
+	<div class="d-flex justify-content-center flex-wrap">
+		<figure>
+			<img src={{ asset('img/equipe1.jpg') }}>
+			<figcaption>Kacha</figcaption>
 		</figure>
-	</section>
+		<figure>
+			<img src={{ asset('img/equipe2.jpg') }}>
+			<figcaption>Paola Carosella</figcaption>
+		</figure>
+		<figure>
+			<img src={{ asset('img/equipe3.jpg') }}>
+			<figcaption>Shelina Permalloo</figcaption>
+		</figure>
+		<figure>
+			<img src={{ asset('img/equipe4.jpg') }}>
+			<figcaption>Samuel Lee Sum</figcaption>
+		</div>
+	</figure>
+</section>
 
 
-	{# Section Avis Client #}
-	<section
-		class="example-wrapper">
-		{# reviews start #}
-		<h2 class="text-center my-5">
-			Que Disent Nos
-			<span>C</span>lients</h2>
-		<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+{# Section Avis Client #}
+<section
+	class="example-wrapper">
+	{# reviews start #}
+	<h2 class="text-center my-5">
+		Que Disent Nos
+		<span>C</span>lients</h2>
+	<p class="text-center">Découvrez ce que nos clients satisfaits ont à dire à propos de leur expérience chez nous. Leurs avis élogieux témoignent de notre engagement à offrir des plats délicieux, un service exceptionnel et une ambiance chaleureuse. Laissez-vous convaincre par leurs témoignages et rejoignez-nous pour une expérience gastronomique mémorable.</p>
 
-		<div class="avis">
-			<div class="d-flex flex-wrap justify-content-center">
-				{% for item in reviews %}
-					{% set note = item.note %}
-					<div class="card m-3 ">
-						<div class="card-body unit">
-							<h5 class="card-title">{{item.name }}</h5>
+	<div class="avis">
+		<div class="d-flex flex-wrap justify-content-center">
+			{% for item in reviews %}
+				{% set note = item.note %}
+				<div class="card m-3 ">
+					<div class="card-body unit">
+						<h5 class="card-title">{{item.name }}</h5>
 
-							<p class="card-text">{{item.message}}</p>
-							<p>publie le :
-								{{ item.DatePublication|date('Y-m-d')}}</p>
-							<p>Avis client :
-								<br>
-								{% for star in 1..note %}
-									⭐
-								{% endfor %}
-							</p>
-						</div>
+						<p class="card-text">{{item.message}}</p>
+						<p>publie le :
+							{{ item.DatePublication|date('Y-m-d')}}</p>
+						<p>Avis client :
+							<br>
+							{% for star in 1..note %}
+								⭐
+							{% endfor %}
+						</p>
 					</div>
-				{% endfor %}
-			</div>
+				</div>
+			{% endfor %}
 		</div>
-	</section>
+	</div>
+</section>
 
 
-	{# Section Contact #}
-	<section class="contact text-center">
+{# Section Contact #}
+<section class="contact text-center">
 
-		<h1 class="pt-4 pb-4">
-			<span>C</span>ontactez-nous
-		</h1>
+	<h1 class="pt-4 pb-4">
+		<span>C</span>ontactez-nous
+	</h1>
 
-		{% for message in app.flashes('success') %}
-			<div class="alert alert-success" role="alert">{{ message }}</div>
-		{% endfor %}
+	{% for message in app.flashes('success') %}
+		<div class="alert alert-success" role="alert">{{ message }}</div>
+	{% endfor %}
 
-		<div class="d-flex form justify-content-center m-auto p-5">
-			{{ form_start(contactForm) }}
+	<div class="d-flex form justify-content-center m-auto p-5">
+		{{ form_start(contactForm) }}
 
-			<div
-				class="mb-3 d-flex flex-row flex-nowrap gap-2">
-				{# Prenom #}
-				{{ form_widget(contactForm.Prenom, {'attr': {'class': 'form-control'}}) }}
-				{{ form_errors(contactForm.Prenom) }}
+		<div
+			class="mb-3 d-flex flex-row flex-nowrap gap-2">
+			{# Prenom #}
+			{{ form_widget(contactForm.Prenom, {'attr': {'class': 'form-control'}}) }}
+			{{ form_errors(contactForm.Prenom) }}
 
-				{# Nom #}
-				{{ form_widget(contactForm.Nom, {'attr': {'class': 'form-control'}}) }}
-				{{ form_errors(contactForm.Nom) }}
-			</div>
-
-			<div
-				class="mb-3 d-flex flex-row flex-nowrap gap-2">
-				{# Email#}
-				{{ form_widget(contactForm.Email, {'attr': {'class': 'form-control'}}) }}
-				{{ form_errors(contactForm.Email) }}
-
-				{# Telephone #}
-				{{ form_widget(contactForm.Telephone, {'attr': {'class': 'form-control'}}) }}
-				{{ form_errors(contactForm.Telephone) }}
-			</div>
-			<div
-				class="mb-3">
-				{# Sujet #}
-				{{ form_widget(contactForm.Sujet, {'attr': {'class': 'form-control'}}) }}
-				{{ form_errors(contactForm.Sujet) }}
-			</div>
-			<div
-				class="mb-3 h-55">
-				{# Message #}
-				{{ form_widget(contactForm.Message, {'attr': {'class': 'form-control'}}) }}
-				{{ form_errors(contactForm.Message) }}
-			</div>
-			{{ form_end(contactForm) }}
+			{# Nom #}
+			{{ form_widget(contactForm.Nom, {'attr': {'class': 'form-control'}}) }}
+			{{ form_errors(contactForm.Nom) }}
 		</div>
-	{% endblock %}
+
+		<div
+			class="mb-3 d-flex flex-row flex-nowrap gap-2">
+			{# Email#}
+			{{ form_widget(contactForm.Email, {'attr': {'class': 'form-control'}}) }}
+			{{ form_errors(contactForm.Email) }}
+
+			{# Telephone #}
+			{{ form_widget(contactForm.Telephone, {'attr': {'class': 'form-control'}}) }}
+			{{ form_errors(contactForm.Telephone) }}
+		</div>
+		<div
+			class="mb-3">
+			{# Sujet #}
+			{{ form_widget(contactForm.Sujet, {'attr': {'class': 'form-control'}}) }}
+			{{ form_errors(contactForm.Sujet) }}
+		</div>
+		<div
+			class="mb-3 h-55">
+			{# Message #}
+			{{ form_widget(contactForm.Message, {'attr': {'class': 'form-control'}}) }}
+			{{ form_errors(contactForm.Message) }}
+		</div>
+		{{ form_end(contactForm) }}
+	</div>
+{% endblock %}
